@@ -1,3 +1,5 @@
+// import "truffle/Assert.sol";
+
 const StarNotary = artifacts.require("StarNotary");
 
 var accounts;
@@ -76,6 +78,16 @@ it('lets user2 buy a star and decreases its balance in ether', async() => {
 // Implement Task 2 Add supporting unit tests
 
 it('can add the star name and star symbol properly', async() => {
+    let name = "SNT";
+    let symbol = "USD";
+    let instance = await StarNotary.deployed();
+
+    let _name = await instance.name.call();
+    assert.equal(_name, name);
+
+    let _symbol = await instance.symbol.call();
+    assert.equal(_symbol, symbol);
+
     // 1. create a Star with different tokenId
     //2. Call the name and symbol properties in your Smart Contract and compare with the name and symbol provided
 });
@@ -93,6 +105,13 @@ it('lets a user transfer a star', async() => {
 });
 
 it('lookUptokenIdToStarInfo test', async() => {
+    let instance = await StarNotary.deployed();
+    let user1 = accounts[1];
+    let starId = 10;
+    let staeName = 'awesome star';
+    await instance.createStar(staeName, starId, {from: user1});
+    const _starName = await instance.lookUptokenIdToStarInfo(starId);
+    assert.equal(_starName,staeName);
     // 1. create a Star with different tokenId
     // 2. Call your method lookUptokenIdToStarInfo
     // 3. Verify if you Star name is the same
