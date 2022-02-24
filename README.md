@@ -1,5 +1,8 @@
-# ND1309 C2 Ethereum Smart Contracts, Tokens and Dapps - Project Starter 
+# StarNotery - Ethereum Smart Contracts, Token and Dapp #
 **PROJECT: Decentralized Star Notary Service Project** - For this project, you will create a DApp by adding functionality with your smart contract and deploy it on the public testnet.
+
+***Service short name*** - SNT\
+***Service Symbol*** - USD
 
 ### ToDo
 This Starter Code has already implemented the functionalities you implemented in the StarNotary (Version 2) exercise, and have comments in all the files you need to implement your tasks.
@@ -17,7 +20,7 @@ npm -v
 ```
 
 
-2. **Truffle v5.X.X** - A development framework for Ethereum. 
+2. ** Truffle v5.4.33** - A development framework for Ethereum. 
 ```bash
 # Unsinstall any previous version
 npm uninstall -g truffle
@@ -40,7 +43,7 @@ truffle version
 ```bash
 cd app
 # install packages
-npm install --save  openzeppelin-solidity@2.3
+npm install --save  openzeppelin-solidity@2.3.0
 npm install --save  truffle-hdwallet-provider@1.0.17
 npm install webpack-dev-server -g
 npm install web3
@@ -101,6 +104,7 @@ cd app
 node index.js
 ```
 
+### Rinkeby contracts address - 0x8eEaFe497AC2bACd35dB7035288b750fdA0c32e9
 ## Troubleshoot
 #### Error 1 
 ```
